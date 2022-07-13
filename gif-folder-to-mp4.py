@@ -11,12 +11,12 @@ If you need help this should do the trick: https://www.wikihow.com/Install-FFmpe
 # Make sure your folders don't have spaces in their names. It's still possible but will take extra work not included in
 # this script.
 
-folder_of_gifs = os.path.normpath(r'C:\Users\patel\WorkingFiles\Gifs')
+folder_of_gifs = os.path.normpath(r'Insert path to your folder of gifs here')
 # example of proper path: r'C:\Users\YourName\SomeFolderWithGifs'
 
 
 for gif in os.listdir(folder_of_gifs):
-    output = os.path.normpath(r'C:\Users\patel\WorkingFiles\mp4converttest' + '\\' + gif[:-3] + 'mp4')
+    output = os.path.normpath(r'Insert path of where to output mp4 files' + '\\' + gif[:-3] + 'mp4')
     # example of proper path: r'C:\Users\YourName\PutMP4Here'
 
     # This is the code where ffmpeg actually is run. Not sure if this works on Mac or linux :(
