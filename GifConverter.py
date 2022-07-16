@@ -22,15 +22,17 @@ if __name__ == '__main__':
 
             # enter a suitable name for the mp4 file
             name = input('Name of gif: ')
-
-            result_path = os.path.normpath("C:/Users/patel/WorkingFiles/Gifs/" + name + ".gif")
+            
+            # Saves gif to a temporary location for subsequent conversion, detail a temporary path below
+            # Example: "C:/Users/yourName/tmp/tmp-gifs/"
+            result_path = os.path.normpath("Enter path here" + name + ".gif")
 
             with open(result_path, 'wb') as f:
                 f.write(requests.get(uri).content)
 
-            target = os.path.normpath(r'"C:/Users/patel/WorkingFiles/Gifs"' + '/' + name + '.gif')
+            target = os.path.normpath(r'"Same tmp path as line 28"' + '/' + name + '.gif')
             print(target)
-            output = os.path.normpath(r'"C:\Users\patel\Assets\Gifs (mp4 versions)"' + '/' + name + '.mp4')
+            output = os.path.normpath(r'"Path of where you want the mp4s to go"' + '/' + name + '.mp4')
 
             subprocess.call(
                 'ffmpeg -i ' + target + ' -movflags faststart -pix_fmt yuv420p -vf "scale=trunc(iw/2)*2:trunc(ih/2)*2" ' + output,
